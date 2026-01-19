@@ -140,5 +140,4 @@ docker compose exec web pytest
 
 ## Автор
 
-Артём Латышев,
-Junior Python Developer
+Артём Латышев
