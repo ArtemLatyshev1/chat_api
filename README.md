@@ -1,4 +1,4 @@
-# Chat API (Test Task)
+# Chat API
 
 Небольшое API для работы с чатами и сообщениями.
 
