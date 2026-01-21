@@ -17,7 +17,7 @@ class Chat(Base):
     #дата создание чата, используем стандарт UTC чтобы не зависеть от расположения сервера
     created_at = Column(DateTime, default=datetime.utcnow())
 
-    #Связь с таблицей Message, один ко многим, chat.messages - message.chat. Если удалится чат, то все сообщения удаляются
+    #Связь с таблицей Message, один ко многим, chat.messages - message.chat. Если удалится чат, то все его сообщения удаляются
     messages = relationship(
         "Message",
         back_populates="chat",

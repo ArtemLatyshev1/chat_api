@@ -20,6 +20,7 @@ def create_chat(chat: ChatCreate, db: Session = Depends(get_db)):
 
 @router.post("/chats/{chat_id}/messages/")
 def create_message(chat_id: int, msg: MessageCreate, db: Session = Depends(get_db)):
+    #получаем только сообщения этого чата
     chat = db.query(Chat).filter(Chat.id == chat_id).first()
     if not chat:
         raise HTTPException(status_code=404, detail="Chat not found")
@@ -34,10 +35,10 @@ def create_message(chat_id: int, msg: MessageCreate, db: Session = Depends(get_d
 @router.get("/chats/{chat_id}")
 def get_chat(chat_id: int, limit: int = 20, db: Session = Depends(get_db)):
     limit = min(limit, 100)
-
+    #получаем только сообщения этого чата
     chat = db.query(Chat).filter(Chat.id == chat_id).first()
     if not chat:
-        raise HTTPException(status_code=404)
+        raise HTTPException(status_code=404, detail="Chat not found")
 
     messages = (
         #Сообщения из базы только от этого чата, берем последние сообщения сортировкой по убыванию,

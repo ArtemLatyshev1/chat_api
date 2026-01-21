@@ -11,7 +11,7 @@ class Message(Base):
     __tablename__ = "messages"
 
     id = Column(Integer, primary_key=True)
-    chat_id = Column(Integer, ForeignKey("chats.id"))
+    chat_id = Column(Integer, ForeignKey("chats.id")) # внешний ключ
     text = Column(String(5000), nullable=False)
     created_at = Column(DateTime, default=datetime.now(UTC))
 
