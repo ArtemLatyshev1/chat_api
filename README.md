@@ -1,4 +1,4 @@
-# Chat API (Test Task)
+# Chat API
 
 Небольшое API для работы с чатами и сообщениями.
 
@@ -36,8 +36,7 @@ chat_api/
 │   ├── database.py          # подключение к БД
 │   ├── models/              # SQLAlchemy модели
 │   ├── schemas/             # Pydantic схемы
-│   ├── routers/             # API роутеры
-│   └── crud/                # работа с БД
+│   └── routers/             # API роутеры
 ├── alembic/                 # миграции
 ├── tests/                   # pytest тесты
 ├── Dockerfile
@@ -54,7 +53,6 @@ chat_api/
 
 ```bash
 git clone <repo_url>
-cd chat_api
 ```
 
 ### 2. Запустить через Docker
@@ -103,7 +101,7 @@ Body: { "text": "Message text" }
 ### Получить чат с сообщениями
 
 ```
-GET /chats/{id}?limit=20
+GET /chats/{id}
 ```
 
 ### Удалить чат
@@ -131,14 +129,6 @@ docker compose exec web pytest
 
 ---
 
-## Примечания
-
-Проект включает базовую архитектуру, был сделан
-акцент на читаемость и понятность кода
-
----
-
 ## Автор
 
-Артём Латышев,
-Junior Python Developer
+Артём Латышев
